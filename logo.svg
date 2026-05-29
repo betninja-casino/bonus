@@ -1,0 +1,39 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#15201a"/>
+      <stop offset="1" stop-color="#0a100c"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#39ff8b"/>
+      <stop offset="1" stop-color="#14c768"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="url(#bg)" stroke="url(#g)" stroke-width="8"/>
+
+  <!-- headband mask -->
+  <path d="M96 196
+           q160 -46 320 0
+           l0 96
+           q-160 50 -320 0 Z"
+        fill="#0d130f" stroke="url(#g)" stroke-width="6"/>
+  <!-- tail of the band -->
+  <path d="M404 206 l64 -26 l-10 40 l-58 14 Z" fill="url(#g)" opacity=".85"/>
+
+  <!-- glowing eyes -->
+  <g filter="url(#glow)">
+    <path d="M150 244 l92 -16 l0 30 l-92 10 Z" fill="url(#g)"/>
+    <path d="M362 244 l-92 -16 l0 30 l92 10 Z" fill="url(#g)"/>
+  </g>
+
+  <!-- shuriken accent -->
+  <g opacity=".9" transform="translate(256 360)">
+    <path d="M0 -30 L8 -8 L30 0 L8 8 L0 30 L-8 8 L-30 0 L-8 -8 Z" fill="url(#g)"/>
+    <circle r="6" fill="#0a100c"/>
+  </g>
+</svg>
